@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Clima Life Solutions refurbishes, resells, rents, and recycles commercial refrigeration equipment to reduce landfill waste and support the circular economy." />
+    <title>Clima Life Solutions</title>
+
+    <!-- Tailwind CSS CDN (required) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        /* Tailwind theme (optional but keeps the eco palette consistent) */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            emerald: "#10b981" // emerald-500/600 vibe
+                        }
+                    },
+                    boxShadow: {
+                        soft: "0 10px 30px rgba(2, 6, 23, 0.08)"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="min-h-screen bg-slate-50 text-slate-800 antialiased [font-family:system-ui,-apple-system,Segoe_UI,Roboto,Inter,Arial,sans-serif]">
+
+    <!-- Skip link -->
+    <a href="#home"
+        class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:shadow-soft">
+        Skip to content
+    </a>
+
+    <!-- Header / Sticky Nav -->
+    <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/85 backdrop-blur">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <nav class="flex items-center justify-between py-3" aria-label="Primary">
+                <!-- Brand -->
+                <a href="#home"
+                    class="group inline-flex items-center gap-3 rounded-xl px-2 py-1 focus:outline-none focus:ring-2 focus:ring-emerald-500/40">
+                    <span
+                        class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600 text-white shadow-sm">
+                        <!-- leaf/cycle icon -->
+                        <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6">
+                            <path fill="currentColor"
+                                d="M12 2c3.1 0 5.9 1.6 7.6 4.2l1.1-1.1a1 1 0 0 1 1.7.7V11a1 1 0 0 1-1 1h-5.2a1 1 0 0 1-.7-1.7l1.1-1.1A7 7 0 0 0 5 12c0 3.9 3.1 7 7 7 2.4 0 4.6-1.2 5.9-3.1a1 1 0 1 1 1.7 1A9 9 0 0 1 3 12 10 10 0 0 1 12 2Zm-1.1 5.3c2.6 0 4.7 2.1 4.7 4.7 0 2.4-2.6 4.6-5.5 6.2a1 1 0 0 1-1.4-1.1c.5-1.8 1.3-3.3 2.2-4.4-.5-.3-1-.6-1.4-.9-1.7-1.3-2.2-2.9-1.4-4 .7-1 1.6-1.5 2.8-1.5Zm.1 2c-.6 0-1 .2-1.2.5-.4.6.7 1.6 2 2.3a1 1 0 0 1 .2 1.5c-.5.6-1 1.3-1.4 2.1 1.8-1.2 3.1-2.5 3.1-3.7 0-1.5-1.2-2.7-2.7-2.7Z" />
+                        </svg>
+                    </span>
+                    <span class="flex flex-col leading-tight">
+                        <span class="text-sm font-semibold tracking-tight text-slate-900">Clima Life Solutions</span>
+                        <span class="text-xs text-slate-500">Commercial refrigeration refurbishment</span>
+                    </span>
+                </a>
+
+                <!-- Desktop links -->
+                <div class="hidden items-center gap-1 md:flex">
+                    <a href="#home"
+                        class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500/40">Home</a>
+                    <a href="#about"
+                        class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500/40">Our
+                        Story</a>
+                    <a href="#services"
+                        class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500/40">Services</a>
+                    <a href="#process"
+                        class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500/40">Assessment</a>
+                    <a href="#impact"
+                        class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500/40">Impact</a>
+                    <a href="#contact"
+                        class="ml-1 inline-flex items-center justify-center rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500/40">
+                        Get a Free Assessment
+                    </a>
+                </div>
+
+                <!-- Mobile menu button (checkbox toggle; no JS required) -->
+                <div class="md:hidden">
+                    <input id="nav-toggle" type="checkbox" class="peer sr-only" aria-hidden="true" />
+                    <label for="nav-toggle"
+                        class="inline-flex cursor-pointer items-center justify-center rounded-xl border border-slate-200 bg-white px-3 py-2 text-slate-700 shadow-sm hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+                        aria-label="Open menu">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5">
+                            <path fill="currentColor"
+                                d="M3 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1Zm0 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1Zm1 5a1 1 0 1 0 0 2h16a1 1 0 1 0 0-2H4Z" />
+                        </svg>
+                    </label>
+
+                    <!-- Mobile dropdown -->
+                    <div
+                        class="pointer-events-none absolute left-0 right-0 top-full origin-top scale-95 opacity-0 transition peer-checked:pointer-events-auto peer-checked:scale-100 peer-checked:opacity-100">
+                        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                            <div class="mt-2 rounded-2xl border border-slate-200 bg-white p-3 shadow-soft">
+                                <div class="grid gap-1">
+                                    <a href="#home"
+                                        class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100">Home</a>
+                                    <a href="#about"
+                                        class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100">Our
+                                        Story</a>
+                                    <a href="#services"
+                                        class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100">Services</a>
+                                    <a href="#process"
+                                        class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100">Assessment</a>
+                                    <a href="#impact"
+                                        class="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100">Impact</a>
+                                    <a href="#contact"
+                                        class="mt-1 inline-flex items-center justify-center rounded-lg bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700">
+                                        Get a Free Assessment
+                                    </a>
+                                </div>
+                                <p class="mt-3 text-xs text-slate-500">
+                                    Tip: Tap a link to navigate. Replace contact details and the form action before
+                                    publishing.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section id="home" class="relative overflow-hidden">
+            <!-- subtle eco gradient background -->
+            <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-b from-emerald-50 via-white to-slate-50">
+            </div>
+            <div aria-hidden="true"
+                class="absolute -top-24 right-[-8rem] h-72 w-72 rounded-full bg-emerald-200/40 blur-3xl"></div>
+            <div aria-hidden="true"
+                class="absolute -bottom-24 left-[-10rem] h-80 w-80 rounded-full bg-teal-200/40 blur-3xl"></div>
+
+            <div
+                class="relative mx-auto max-w-7xl px-4 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-16 lg:px-8 lg:pb-24 lg:pt-20">
+                <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+                    <div>
+                        <p
+                            class="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/70 px-3 py-1 text-xs font-semibold text-emerald-700">
+                            <span class="inline-flex h-2 w-2 rounded-full bg-emerald-600"></span>
+                            Sustainability-first refrigeration lifecycle services
+                        </p>
+
+                        <h1 class="mt-5 text-balance text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+                            Greener Cooling Starts Here
+                        </h1>
+
+                        <p class="mt-5 max-w-xl text-pretty text-lg leading-relaxed text-slate-600">
+                            Reviving commercial refrigeration equipment for a sustainable future. We refurbish, resell,
+                            rent, recycle – reducing landfill waste and supporting the circular economy.
+                        </p>
+
+                        <div class="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+                            <a href="#contact"
+                                class="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500/40">
+                                Get a Free Assessment
+                            </a>
+                            <a href="#services"
+                                class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/40">
+                                Discover More
+                            </a>
+                        </div>
+
+                        <dl class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+                            <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                                <dt class="text-xs font-semibold text-slate-500">Circular economy</dt>
+                                <dd class="mt-1 text-sm font-semibold text-slate-900">Extend lifecycle</dd>
+                            </div>
+                            <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                                <dt class="text-xs font-semibold text-slate-500">Operational continuity</dt>
+                                <dd class="mt-1 text-sm font-semibold text-slate-900">Reviving Refrigeration</dd>
+                            </div>
+                            <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                                <dt class="text-xs font-semibold text-slate-500">Verified quality</dt>
+                                <dd class="mt-1 text-sm font-semibold text-slate-900">Rigorous testing</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <!-- Hero media card -->
+                    <div class="relative">
+                        <div class="rounded-3xl border border-slate-200 bg-white shadow-soft">
+                            <div class="p-4 sm:p-5">
+                                <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
+                                    <!-- Replace these placeholder images with your own -->
+                                    <img src="img/Hero.jpg"
+                                        alt="Commercial refrigeration equipment in a clean, modern facility"
+                                        class="h-64 w-full object-cover sm:h-72 lg:h-80" loading="lazy" />
+                                </div>
+
+                                <div class="mt-4 grid gap-3 sm:grid-cols-3">
+                                    <div class="rounded-2xl bg-emerald-50 p-3">
+                                        <div class="flex items-center gap-2 text-emerald-700">
+                                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5">
+                                                <path fill="currentColor"
+                                                    d="M12 2a9 9 0 1 0 9 9 1 1 0 1 0-2 0 7 7 0 1 1-7-7 1 1 0 1 0 0-2Z" />
+                                                <path fill="currentColor"
+                                                    d="M12 6a1 1 0 0 0-1 1v5a1 1 0 0 0 .3.7l3 3a1 1 0 0 0 1.4-1.4l-2.7-2.7V7a1 1 0 0 0-1-1Z" />
+                                            </svg>
+                                            <p class="text-sm font-semibold"> Recovery</p>
+                                        </div>
+                                        <p class="mt-1 text-xs text-slate-600">Minimise downtime with structured
+                                            workflows.</p>
+                                    </div>
+
+                                    <div class="rounded-2xl bg-teal-50 p-3">
+                                        <div class="flex items-center gap-2 text-teal-700">
+                                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5">
+                                                <path fill="currentColor"
+                                                    d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z" />
+                                                <path fill="currentColor"
+                                                    d="M12 6a1 1 0 0 0-1 1v4.6l-2.2 2.2a1 1 0 0 0 1.4 1.4l2.5-2.5A1 1 0 0 0 13 12V7a1 1 0 0 0-1-1Z" />
+                                            </svg>
+                                            <p class="text-sm font-semibold">Refurbish</p>
+                                        </div>
+                                        <p class="mt-1 text-xs text-slate-600">Safety, efficiency, and compliance
+                                            checks.</p>
+                                    </div>
+
+                                    <div class="rounded-2xl bg-slate-50 p-3">
+                                        <div class="flex items-center gap-2 text-slate-700">
+                                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5">
+                                                <path fill="currentColor"
+                                                    d="M12 3a9 9 0 0 0-9 9 1 1 0 1 0 2 0 7 7 0 0 1 7-7 1 1 0 1 0 0-2Zm9 8a1 1 0 0 0-1 1 7 7 0 0 1-7 7 1 1 0 1 0 0 2 9 9 0 0 0 9-9 1 1 0 0 0-1-1Z" />
+                                                <path fill="currentColor"
+                                                    d="M8.6 9.4a1 1 0 0 0 0 1.4l2 2a1 1 0 0 0 1.4 0l4-4a1 1 0 1 0-1.4-1.4L11.3 10.7l-1.3-1.3a1 1 0 0 0-1.4 0Z" />
+                                            </svg>
+                                            <p class="text-sm font-semibold">Re-circulate</p>
+                                        </div>
+                                        <p class="mt-1 text-xs text-slate-600">Track CO₂ savings and landfill diversion.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div aria-hidden="true"
+                            class="absolute -right-6 -top-6 hidden h-28 w-28 rounded-3xl border border-emerald-200 bg-white/70 p-4 shadow-soft lg:block">
+                            <div class="h-full w-full rounded-2xl bg-gradient-to-br from-emerald-100 to-teal-50"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT / OUR STORY -->
+        <section id="about" class="bg-white">
+            <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+                <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
+                    <div>
+                        <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Our Story</h2>
+                        <p class="mt-4 text-lg leading-relaxed text-slate-600">
+                            Founded with a vision to combat environmental waste, we specialize in refurbishing and
+                            reselling commercial refrigeration equipment.
+                            Our mission is to extend product life cycles, reduce landfill contributions, and make
+                            sustainable cooling accessible to all.
+                        </p>
+                        <p class="mt-4 leading-relaxed text-slate-600">
+                            Our dedicated team combines hands-on technical expertise with a quality-first
+                            approach—ensuring every unit is restored for performance, safety, and efficiency.
+                            We build strong partnerships with businesses to create greener cycles—one fridge at a time.
+                        </p>
+
+                        <div class="mt-8 grid gap-4 sm:grid-cols-2">
+                            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                                <div class="flex items-start gap-3">
+                                    <span
+                                        class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600 text-white">
+                                        <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6">
+                                            <path fill="currentColor"
+                                                d="M12 2a1 1 0 0 1 1 1v2.1a7 7 0 0 1 5.5 5.5H21a1 1 0 1 1 0 2h-2.5A7 7 0 0 1 13 18.9V21a1 1 0 1 1-2 0v-2.1a7 7 0 0 1-5.5-5.5H3a1 1 0 1 1 0-2h2.5A7 7 0 0 1 11 5.1V3a1 1 0 0 1 1-1Zm0 5a5 5 0 1 0 5 5 5 5 0 0 0-5-5Z" />
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <h3 class="text-base font-semibold text-slate-900">Quality & efficiency</h3>
+                                        <p class="mt-1 text-sm text-slate-600">Testing and refurbishment steps designed
+                                            to deliver like-new performance.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                                <div class="flex items-start gap-3">
+                                    <span
+                                        class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-teal-600 text-white">
+                                        <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6">
+                                            <path fill="currentColor"
+                                                d="M12 2c4.4 0 8 3.6 8 8 0 4.1-3.2 7.5-7.2 7.9L12 22l-.8-4.1C7.2 17.5 4 14.1 4 10c0-4.4 3.6-8 8-8Zm0 2a6 6 0 1 0 6 6c0-3.3-2.7-6-6-6Z" />
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <h3 class="text-base font-semibold text-slate-900">Sustainability focus</h3>
+                                        <p class="mt-1 text-sm text-slate-600">Refurbish, reuse, and responsibly recycle
+                                            to minimise landfill waste.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- optional timeline/circular graphic placeholder -->
+                    <div
+                        class="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-emerald-50 p-6 shadow-soft">
+                        <h3 class="text-base font-semibold text-slate-900">A simple, circular approach</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                            Keep equipment in service longer with a process built around assessment, refurbishment, and
+                            reintroduction—supported by rentals and responsible recycling.
+                        </p>
+
+                        <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                            <div class="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-200">
+                                <p class="text-xs font-semibold text-emerald-700">01 — Assess</p>
+                                <p class="mt-1 text-sm font-semibold text-slate-900">Viability & compliance</p>
+                                <p class="mt-1 text-sm text-slate-600">History, compressor health, structure,
+                                    refrigerant checks.</p>
+                            </div>
+                            <div class="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-200">
+                                <p class="text-xs font-semibold text-emerald-700">02 — Refurbish</p>
+                                <p class="mt-1 text-sm font-semibold text-slate-900">Restore performance</p>
+                                <p class="mt-1 text-sm text-slate-600">Certified parts, deep clean, repairs, safety
+                                    testing.</p>
+                            </div>
+                            <div class="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-200">
+                                <p class="text-xs font-semibold text-emerald-700">03 — Reintroduce</p>
+                                <p class="mt-1 text-sm font-semibold text-slate-900">Resale, lease, or rental</p>
+                                <p class="mt-1 text-sm text-slate-600">Flexible options for businesses of all sizes.</p>
+                            </div>
+                            <div class="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-200">
+                                <p class="text-xs font-semibold text-emerald-700">04 — Report</p>
+                                <p class="mt-1 text-sm font-semibold text-slate-900">Measure impact</p>
+                                <p class="mt-1 text-sm text-slate-600">CO₂ savings and landfill diversion reporting.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 rounded-2xl border border-emerald-200 bg-white/80 p-4">
+                            <p class="text-sm text-slate-700">
+                                <span class="font-semibold text-slate-900">Partnership matters:</span>
+                                we work with customers and recycling organisations to keep usable equipment in
+                                circulation whenever possible.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services" class="bg-slate-50">
+            <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+                <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Our Services</h2>
+                        <p class="mt-3 max-w-2xl text-slate-600">
+                            Everything you need to reduce waste, maintain uptime, and deliver sustainable refrigeration
+                            across your operation.
+                        </p>
+                    </div>
+                    <a href="#contact"
+                        class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/40">
+                        Request a quote
+                    </a>
+                </div>
+
+                <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Card: Refurbishment -->
+                    <article
+                        class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-soft">
+                        <div class="flex items-start justify-between gap-4">
+                            <div
+                                class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-600 text-white">
+                                <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6">
+                                    <path fill="currentColor"
+                                        d="M7 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H7Zm0 2h10v16H7V4Zm2 2a1 1 0 0 0 0 2h6a1 1 0 1 0 0-2H9Zm0 4a1 1 0 0 0 0 2h6a1 1 0 1 0 0-2H9Zm0 4a1 1 0 0 0 0 2h6a1 1 0 1 0 0-2H9Z" />
+                                </svg>
+                            </div>
+                            <span
+                                class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">Core</span>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold text-slate-900">Equipment Refurbishment</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                            Restore commercial fridges/freezers to like-new using eco-friendly methods, certified parts,
+                            and rigorous testing for safety and efficiency.
+                        </p>
+                    </article>
+
+                    <!-- Card: Resale -->
+                    <article
+                        class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-soft">
+                        <div
+                            class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-600 text-white">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6">
+                                <path fill="currentColor"
+                                    d="M7 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8.4a2 2 0 0 0-.6-1.4l-1.4-1.4A2 2 0 0 0 15.6 4H7Zm0 2h8v3a1 1 0 0 0 1 1h3v8H7V6Zm10.6 2 1.4 1.4H17V8Z" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold text-slate-900">Resale & Distribution</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                            A catalog of refurbished units available for purchase or lease, with flexible options to
+                            meet the needs of businesses of all sizes.
+                        </p>
+                    </article>
+
+                    <!-- Card: Rentals -->
+                    <article
+                        class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-soft">
+                        <div
+                            class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-700 text-white">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6">
+                                <path fill="currentColor"
+                                    d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Zm2 0v10h14V7H5Zm2 2h6a1 1 0 1 1 0 2H7a1 1 0 1 1 0-2Zm0 4h10a1 1 0 1 1 0 2H7a1 1 0 1 1 0-2Z" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold text-slate-900">Rentals</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                            While you wait for your refrigeration equipment to arrive or be refurbished, we provide
+                            temporary rental units to keep your operations running.
+                        </p>
+                    </article>
+
+                    <!-- Card: Recycling Partnerships -->
+                    <article
+                        class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-soft">
+                        <div
+                            class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900 text-white">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6">
+                                <path fill="currentColor"
+                                    d="M12 2a10 10 0 0 0-9.9 8.5 1 1 0 1 0 2 .3A8 8 0 0 1 20 12h-1.6a1 1 0 1 0 0 2H22a1 1 0 0 0 1-1V9.4a1 1 0 1 0-2 0V10a10 10 0 0 0-9-8Zm-9 10a1 1 0 0 0-1 1v3.6a1 1 0 0 0 2 0V16a10 10 0 0 0 9 8 10 10 0 0 0 9.9-8.5 1 1 0 0 0-2-.3A8 8 0 0 1 4 12h1.6a1 1 0 0 0 0-2H3Z" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold text-slate-900">Recycling Partnerships</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                            We collaborate with businesses and organizations to collect, recycle, and repurpose used
+                            refrigeration units—supporting a closed-loop, circular economy.
+                        </p>
+                    </article>
+
+                    <!-- Card: Custom Solutions -->
+                    <article
+                        class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-soft">
+                        <div
+                            class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-700 text-white">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6">
+                                <path fill="currentColor"
+                                    d="M21 8.5a3.5 3.5 0 0 1-5.7 2.7l-6.1 6.1a3.5 3.5 0 1 1-2.5-2.5l6.1-6.1A3.5 3.5 0 1 1 21 8.5ZM6.5 21a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm10-10a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold text-slate-900">Custom Solutions</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                            Need specialized equipment or unique solutions? Our team offers tailored modifications and
+                            on-site support for complex projects.
+                        </p>
+                    </article>
+
+                    <!-- Card: Impact Reporting -->
+                    <article
+                        class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-soft">
+                        <div
+                            class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-600 text-white">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6">
+                                <path fill="currentColor"
+                                    d="M4 19a1 1 0 0 1-1-1V6a1 1 0 1 1 2 0v12h16a1 1 0 1 1 0 2H4Z" />
+                                <path fill="currentColor"
+                                    d="M8 16a1 1 0 0 1-1-1v-3a1 1 0 1 1 2 0v3a1 1 0 0 1-1 1Zm4 0a1 1 0 0 1-1-1V9a1 1 0 1 1 2 0v6a1 1 0 0 1-1 1Zm4 0a1 1 0 0 1-1-1v-4a1 1 0 1 1 2 0v4a1 1 0 0 1-1 1Z" />
+                            </svg>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold text-slate-900">Impact Reporting</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">
+                            Track your environmental contribution with detailed impact reports, including CO₂ savings,
+                            landfill diversion, and positive outcomes from your partnership.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS / ASSESSMENT -->
+        <section id="process" class="bg-white">
+            <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+                <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                            How We Refurbish – Assessment to Reintroduction
+                        </h2>
+                        <p class="mt-4 text-slate-600">
+                            Every unit starts with a structured assessment to determine the most sustainable next
+                            step—refurbishment when viable, or responsible recycling when it’s not.
+                        </p>
+
+                        <!-- Steps -->
+                        <ol class="mt-8 grid gap-4">
+                            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                                <div class="flex items-start gap-4">
+                                    <span
+                                        class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600 text-white text-sm font-bold">1</span>
+                                    <div>
+                                        <h3 class="text-base font-semibold text-slate-900">Detailed assessment</h3>
+                                        <p class="mt-1 text-sm leading-relaxed text-slate-600">
+                                            Age and service history, structural integrity, compressor health, electrical
+                                            components, refrigerant compliance, and a cost-versus-value analysis.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                                <div class="flex items-start gap-4">
+                                    <span
+                                        class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-teal-600 text-white text-sm font-bold">2</span>
+                                    <div>
+                                        <h3 class="text-base font-semibold text-slate-900">Refurbish or recycle</h3>
+                                        <p class="mt-1 text-sm leading-relaxed text-slate-600">
+                                            If refurbishment is viable, we restore the unit with certified parts and
+                                            thorough testing; if not, we salvage usable components and responsibly
+                                            recycle materials.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                                <div class="flex items-start gap-4">
+                                    <span
+                                        class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white text-sm font-bold">3</span>
+                                    <div>
+                                        <h3 class="text-base font-semibold text-slate-900">Reintroduction to service
+                                        </h3>
+                                        <p class="mt-1 text-sm leading-relaxed text-slate-600">
+                                            Resale, distribution, or rentals—supported by documentation and optional
+                                            impact reporting to help you evidence sustainability outcomes.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <div class="mt-8 rounded-2xl border border-emerald-200 bg-emerald-50 p-5">
+                            <p class="text-sm text-emerald-900">
+                                Want to keep trading during refurbishment? Ask about our temporary rental units to
+                                maintain seamless operations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Process image -->
+                    <div class="rounded-3xl border border-slate-200 bg-white p-4 shadow-soft">
+                        <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100">
+                            <img src="img/Fridge repair 1.png"
+                                alt="Professional partnership meeting representing assessment and collaboration"
+                                class="h-72 w-full object-cover sm:h-80 lg:h-[28rem]" loading="lazy" />
+                        </div>
+
+                        <div class="mt-4 grid gap-3 sm:grid-cols-2">
+                            <div class="rounded-2xl bg-slate-50 p-4">
+                                <p class="text-xs font-semibold text-slate-500">Assessment output</p>
+                                <p class="mt-1 text-sm font-semibold text-slate-900">Clear recommendation</p>
+                                <p class="mt-1 text-sm text-slate-600">Refurbish, rent, resell, or recycle—based on
+                                    viability.</p>
+                            </div>
+                            <div class="rounded-2xl bg-slate-50 p-4">
+                                <p class="text-xs font-semibold text-slate-500">Confidence</p>
+                                <p class="mt-1 text-sm font-semibold text-slate-900">Traceable steps</p>
+                                <p class="mt-1 text-sm text-slate-600">A documented process you can share internally.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMPACT / GALLERY -->
+        <section id="impact" class="bg-slate-50">
+            <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+                <div class="grid gap-10 lg:grid-cols-2 lg:items-end">
+                    <div>
+                        <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Refurbishment in Action
+                        </h2>
+                        <p class="mt-4 text-slate-600">
+                            We meticulously restore refrigeration equipment using eco-friendly methods and certified
+                            parts extending product life cycles and reducing environmental impact.
+                            Refurbished units are resold or leased to support businesses worldwide, diverting waste from
+                            landfills and contributing to global sustainability efforts.
+                        </p>
+                    </div>
+
+                    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                        <h3 class="text-base font-semibold text-slate-900">What you can measure</h3>
+                        <dl class="mt-4 grid gap-4 sm:grid-cols-3">
+                            <div class="rounded-2xl bg-emerald-50 p-4">
+                                <dt class="text-xs font-semibold text-emerald-700">Landfill diversion</dt>
+                                <dd class="mt-1 text-sm font-semibold text-slate-900">Units saved</dd>
+                            </div>
+                            <div class="rounded-2xl bg-teal-50 p-4">
+                                <dt class="text-xs font-semibold text-teal-700">CO₂ savings</dt>
+                                <dd class="mt-1 text-sm font-semibold text-slate-900">Estimated impact</dd>
+                            </div>
+                            <div class="rounded-2xl bg-slate-50 p-4">
+                                <dt class="text-xs font-semibold text-slate-700">Operational uptime</dt>
+                                <dd class="mt-1 text-sm font-semibold text-slate-900">Rental support</dd>
+                            </div>
+                        </dl>
+                        <p class="mt-4 text-sm text-slate-600">
+                            Possible metrics with your real reporting figures once available.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery grid -->
+                <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                    <figure class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+                        <img src="img/Fridge repair2.png"
+                            alt="Commercial fridge unit (before refurbishment placeholder)"
+                            class="h-56 w-full object-cover" loading="lazy" />
+                        <figcaption class="p-4">
+                            <p class="text-sm font-semibold text-slate-900">Before</p>
+                            <p class="mt-1 text-sm text-slate-600">Inspection, cleaning plan, and parts assessment.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+                        <img src="img/Frideg repair 3.png"
+                            alt="Technician servicing refrigeration equipment (process placeholder)"
+                            class="h-56 w-full object-cover" loading="lazy" />
+                        <figcaption class="p-4">
+                            <p class="text-sm font-semibold text-slate-900">During</p>
+                            <p class="mt-1 text-sm text-slate-600">Repairs, certified parts replacement, and testing.
+                            </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure
+                        class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm sm:col-span-2 lg:col-span-1">
+                        <img src="img/Fridge repair 4.png"
+                            alt="Clean refurbished refrigeration equipment (after refurbishment placeholder)"
+                            class="h-56 w-full object-cover" loading="lazy" />
+                        <figcaption class="p-4">
+                            <p class="text-sm font-semibold text-slate-900">After</p>
+                            <p class="mt-1 text-sm text-slate-600">Like-new performance, ready for reintroduction.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="mt-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div class="grid gap-6 lg:grid-cols-3 lg:items-center">
+                        <div class="lg:col-span-2">
+                            <h3 class="text-xl font-bold tracking-tight text-slate-900">Resale & Impact</h3>
+                            <p class="mt-2 text-slate-600">
+                                Refurbished units help businesses access reliable refrigeration without the footprint of
+                                new manufacturing.
+                                Each successful refurbishment helps prevent usable equipment from entering landfill and
+                                strengthens a circular supply chain.
+                            </p>
+                        </div>
+                        <div class="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
+                            <a href="#services"
+                                class="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500/40">
+                                Explore services
+                            </a>
+                            <a href="#contact"
+                                class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500/40">
+                                Talk to our team
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="bg-white">
+            <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+                <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
+                    <div>
+                        <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Get in Touch for a Free
+                            Assessment</h2>
+                        <p class="mt-4 text-slate-600">
+                            Tell us what equipment you have, what issues you’re seeing, and your preferred timeline.
+                            We’ll recommend the most sustainable route—refurbishment, rental cover, resale, or
+                            responsible recycling.
+                        </p>
+
+                        <div class="mt-8 grid gap-4 sm:grid-cols-2">
+                            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                                <p class="text-xs font-semibold text-slate-500">Email</p>
+                                <a href="mailto:hello@climalifesolutions.co.uk"
+                                    class="mt-1 block text-sm font-semibold text-emerald-700 hover:text-emerald-800">
+                                    hello@climalifesolutions.co.uk
+                                </a>
+                            </div>
+                            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                                <p class="text-xs font-semibold text-slate-500">Phone</p>
+                                <a href="tel:+441234567890"
+                                    class="mt-1 block text-sm font-semibold text-emerald-700 hover:text-emerald-800">
+                                    +44 1234 567 890
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 rounded-3xl border border-emerald-200 bg-emerald-50 p-6">
+                            <h3 class="text-base font-semibold text-emerald-900">What to include</h3>
+                            <ul class="mt-3 grid gap-2 text-sm text-emerald-900/90">
+                                <li>Equipment type (fridge/freezer/display case), model if known, and approximate age.
+                                </li>
+                                <li>Any faults, performance concerns, or compliance requirements.</li>
+                                <li>Site constraints and preferred timing (urgent, planned, or ongoing program).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+                        <!-- Replace the action URL with your Formspree endpoint -->
+                        <form action="https://formspree.io/f/{your-id}" method="POST" class="grid gap-4"
+                            aria-label="Contact form">
+                            <div class="grid gap-4 sm:grid-cols-2">
+                                <div>
+                                    <label for="name" class="text-sm font-semibold text-slate-900">Name</label>
+                                    <input id="name" name="name" type="text" autocomplete="name" required
+                                        class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm shadow-sm outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/20"
+                                        placeholder="Your name" />
+                                </div>
+
+                                <div>
+                                    <label for="phone" class="text-sm font-semibold text-slate-900">Phone</label>
+                                    <input id="phone" name="phone" type="tel" autocomplete="tel"
+                                        class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm shadow-sm outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/20"
+                                        placeholder="+44 ..." />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="email" class="text-sm font-semibold text-slate-900">Email</label>
+                                <input id="email" name="email" type="email" autocomplete="email" required
+                                    class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm shadow-sm outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/20"
+                                    placeholder="you@company.com" />
+                            </div>
+
+                            <div>
+                                <label for="message" class="text-sm font-semibold text-slate-900">Message</label>
+                                <textarea id="message" name="message" rows="6" required
+                                    class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm shadow-sm outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/20"
+                                    placeholder="Tell us about your equipment (type, age, issues, location, and timeline)"></textarea>
+                            </div>
+
+                            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                                <button type="submit"
+                                    class="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500/40">
+                                    Send message
+                                </button>
+                                <p class="text-xs text-slate-500">
+                                    Replace <span class="font-semibold">{your-id}</span> with your Formspree ID. so you can receive submissions to your email. No backend code needed!
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-200 bg-slate-50">
+        <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+            <div class="grid gap-8 md:grid-cols-3">
+                <div>
+                    <div class="flex items-center gap-3">
+                        <span
+                            class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600 text-white shadow-sm">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6">
+                                <path fill="currentColor"
+                                    d="M12 2c3.1 0 5.9 1.6 7.6 4.2l1.1-1.1a1 1 0 0 1 1.7.7V11a1 1 0 0 1-1 1h-5.2a1 1 0 0 1-.7-1.7l1.1-1.1A7 7 0 0 0 5 12c0 3.9 3.1 7 7 7 2.4 0 4.6-1.2 5.9-3.1a1 1 0 1 1 1.7 1A9 9 0 0 1 3 12 10 10 0 0 1 12 2Z" />
+                            </svg>
+                        </span>
+                        <div>
+                            <p class="text-sm font-semibold text-slate-900">Clima Life Solutions</p>
+                            <p class="text-xs text-slate-500">Creating a cleaner, greener future – one refurbished unit
+                                at a time</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="text-sm font-semibold text-slate-900">Quick links</p>
+                    <div class="mt-3 grid grid-cols-2 gap-2 text-sm">
+                        <a class="text-slate-600 hover:text-emerald-700" href="#home">Home</a>
+                        <a class="text-slate-600 hover:text-emerald-700" href="#about">Our Story</a>
+                        <a class="text-slate-600 hover:text-emerald-700" href="#services">Services</a>
+                        <a class="text-slate-600 hover:text-emerald-700" href="#process">Assessment</a>
+                        <a class="text-slate-600 hover:text-emerald-700" href="#impact">Impact</a>
+                        <a class="text-slate-600 hover:text-emerald-700" href="#contact">Contact</a>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="text-sm font-semibold text-slate-900">Contact</p>
+                    <div class="mt-3 space-y-2 text-sm text-slate-600">
+                        <p>
+                            Email:
+                            <a class="font-semibold text-emerald-700 hover:text-emerald-800"
+                                href="mailto:hello@climalifesolutions.co.uk">hello@climalifesolutions.co.uk</a>
+                        </p>
+                        <p>
+                            Phone:
+                            <a class="font-semibold text-emerald-700 hover:text-emerald-800"
+                                href="tel:+441234567890">07971 182167</a>
+                        </p>
+                        <p class="text-xs text-slate-500">
+                            Unit 2
+                            Ashwood House
+                            Hamer Lane
+                            Rochdale
+                            OL16 2UL
+
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="mt-8 flex flex-col gap-3 border-t border-slate-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                <p class="text-xs text-slate-500">
+                    © <span id="year">2026</span> Clima Life Solutions. All rights reserved.
+                </p>
+                <p class="text-xs text-slate-500">
+                    Sustainability-driven refurbishment • Resale • Rentals • Recycling partnerships
+                </p>
+            </div>
+        </div>
+
+        <!-- Minimal inline script to set current year (optional). Remove if you want zero JS. -->
+        <script>
+            const y = document.getElementById('year');
+            if (y) y.textContent = new Date().getFullYear();
+        </script>
+    </footer>
+</body>
+
+</html>
+```
